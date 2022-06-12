@@ -5,3 +5,11 @@ export interface Food {
   price: number;
   image: string;
 }
+
+export interface ExtentedFood extends Food {
+  cookedStatus: string;
+}
+
+export interface CartItem extends ExtentedFood {
+  count: number;
+}

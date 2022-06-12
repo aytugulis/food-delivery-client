@@ -1,6 +1,6 @@
 import { CookingPot } from "phosphor-react";
 import { Button } from "../components/Button";
-import { FoodList } from "../components/FoodList";
+import { CartList } from "../components/CartList";
 import { SectionHeader } from "../components/SectionHeader";
 
 export const CardPage = () => {
@@ -11,7 +11,7 @@ export const CardPage = () => {
           icon={<CookingPot weight="fill" size={20} />}
           title="My Cart"
         />
-        <FoodList />
+        <CartList />
       </div>
       <div className="flex flex-col items-center gap-4 w-52 bg-gray-400 border-l-2 border-primary">
         <div>
