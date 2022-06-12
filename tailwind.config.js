@@ -34,8 +34,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: polish("#148F72"),
-        secondary: polish("#FA7365"),
+        primary: polish("#D61C4E"),
+        secondary: polish("#FFD9C0"),
         "tropical-blue": polish("#6478D5"),
         ...defaultColors,
       },
