@@ -8,10 +8,10 @@ export const Navbar = () => {
       <Brand />
       <ul className="flex items-center gap-3">
         <li className="group text-white">
-          <Link className="flex items-center gap-1" to="/login">
+          <Link className="flex items-center gap-1" to="/cart">
             <ShoppingCart className="text-secondary" weight="fill" size={20} />
             <h2 className="group-hover:border-b-2 group-hover:border-secondary">
-              Login
+              My Cart
             </h2>
           </Link>
         </li>
