@@ -32,12 +32,12 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <div className="fixed w-full h-full top-0 left-0">
       <div className="flex flex-col items-center justify-between absolute top-1/4 left-1/4 right-1/4 bottom-1/4 bg-gray-200 py-10 rounded-lg shadow">
-        <div className="flex flex-col items-center">
-          <h1>{name}</h1>
-          <h1>{description}</h1>
+        <div className="flex flex-col items-center sm:text-lg text-xs">
+          <h2 className="font-semibold text-lg">{name}</h2>
+          <p>{description}</p>
         </div>
 
-        <div>
+        <div className="flex sm:flex-row flex-col">
           <label>Food is cooked: </label>
           <select onChange={(e) => setCookedStatus(e.target.value)}>
             <option value="medium">medium</option>
@@ -45,7 +45,7 @@ export const Modal: React.FC<ModalProps> = ({
           </select>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 sm:flex-row flex-col">
           <Button
             leftIcon={<Plus size={16} weight="fill" color="white" />}
             color="tropical-blue"
