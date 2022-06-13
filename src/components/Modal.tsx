@@ -30,7 +30,7 @@ export const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <div className="fixed w-full h-full top-0 left-0">
+    <div className="fixed w-full h-full top-0 left-0 z-10	">
       <div className="flex flex-col items-center justify-between absolute top-1/4 left-1/4 right-1/4 bottom-1/4 bg-gray-200 py-10 rounded-lg shadow">
         <div className="flex flex-col items-center sm:text-lg text-xs">
           <h2 className="font-semibold text-lg">{name}</h2>
