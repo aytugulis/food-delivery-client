@@ -1,7 +1,6 @@
 import { CartItem, ExtentedFood } from "./../type/Food";
 import create from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import produce from "immer";
 
 interface BearState {
   cart: CartItem[];

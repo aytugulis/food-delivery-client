@@ -1,7 +1,7 @@
 # Food delivery project
 
-Live demo: https://food-delivery-client-beta.vercel.app
-Backend repository: https://github.com/aytugulis/food-delivery-server
+- Live demo: https://food-delivery-client-beta.vercel.app
+- Backend repository: https://github.com/aytugulis/food-delivery-server
 
 ## Packages
 
