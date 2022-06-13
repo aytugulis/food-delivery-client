@@ -1,12 +1,17 @@
-import { CartItem } from "./../type/Food";
+import { CartItem, ExtentedFood } from "./../type/Food";
 import create from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import produce from "immer";
 
 interface BearState {
   cart: CartItem[];
-  addToCart: (food: CartItem) => void;
+  addToCart: (food: ExtentedFood) => void;
   removeFromCart: (id: string, cookedStatus: string) => void;
+  setCount: (
+    id: string,
+    cookedStatus: string,
+    type: "increase" | "decrease"
+  ) => void;
 }
 
 export const useStore = create<BearState>()(
@@ -33,9 +38,25 @@ export const useStore = create<BearState>()(
       removeFromCart: (id, cookedStatus) =>
         set((state) => {
           const filteredCart = state.cart.filter(
-            (food) => food.id !== id && food.cookedStatus !== cookedStatus
+            (food) => food.id !== id || food.cookedStatus !== cookedStatus
           );
           return { cart: filteredCart };
+        }),
+
+      setCount: (id, cookedStatus, type) =>
+        set((state) => {
+          const exists = state.cart.findIndex(
+            (food) => food.id === id && food.cookedStatus === cookedStatus
+          );
+          if (exists === -1) return { ...state };
+
+          const food = state.cart[exists];
+          if (food.count !== 0 && type === "decrease") food.count--;
+          else if (type === "increase") food.count++;
+
+          return {
+            cart: [...state.cart],
+          };
         }),
     }))
   )

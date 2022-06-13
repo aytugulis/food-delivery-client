@@ -15,7 +15,7 @@ export const FoodCard: React.FC<Food> = ({
 
   return (
     <>
-      <li className="flex flex-col lg:flex-row justify-center gap-x-5 gap-y-2 items-center lg:basis-1/3 md:basis-1/2 basis-full py-4 duration-300 rounded hover:bg-gray-400">
+      <li className="flex flex-col lg:flex-row gap-3 justify-evenly items-center lg:basis-1/3 md:basis-1/2 basis-full py-4 duration-300 rounded hover:bg-gray-400">
         {isModelOpen && (
           <Modal
             setIsModelOpen={setIsModelOpen}
@@ -31,10 +31,10 @@ export const FoodCard: React.FC<Food> = ({
           src={image}
           alt="food image"
         />
-        <div className="flex flex-col gap-1 items-center lg:items-start">
+        <div className="flex flex-col gap-1 items-center lg:items-start lg:w-2/5 ">
           <p className="font-medium text-lg">{name}</p>
           <p className="font-medium text-gray-700">{description}</p>
-          <p className="font-medium text-lg">${price}</p>
+          <p className="font-medium text-lg">${price.toFixed(2)}</p>
         </div>
 
         <Badge

@@ -7,7 +7,9 @@ import { Loading } from "./Loading";
 
 export const FoodList: React.FC = () => {
   const { isLoading, data } = useQuery<Food[], Error>("foods", async () => {
-    const { data } = await axios.get("http://localhost:5000/food");
+    const { data } = await axios.get(
+      "https://stark-hamlet-49172.herokuapp.com/food"
+    );
     return data.foods;
   });
 

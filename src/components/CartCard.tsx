@@ -23,6 +23,9 @@ export const CartCard: React.FC<CartItem> = ({
     removeFromCart(id, cookedStatus);
     toast.success("Removed");
   };
+
+  const setCount = useStore((state) => state.setCount);
+
   return (
     <li className="flex flex-col justify-center items-center gap-1 px-4 py-4 duration-300 rounded hover:bg-gray-400">
       <img
@@ -32,17 +35,36 @@ export const CartCard: React.FC<CartItem> = ({
       />
       <p className="font-medium text-lg">{name}</p>
       <p className="font-medium text-gray-700">{description}</p>
-      <p className="font-medium text-gray-700">Quantity:{count}</p>
       <p className="font-medium text-gray-700">Cooked: {cookedStatus}</p>
-      <p className="font-medium text-lg">${price}</p>
-      <Button
-        onClick={removeItemHandler}
-        color="red"
-        size="sm"
-        leftIcon={<Trash size={16} color="white" />}
-      >
-        Remove
-      </Button>
+      <div className="flex gap-1">
+        <p className="font-medium ">Quantity: {count}</p>-
+        <p className="font-medium ">Total: ${(price * count).toFixed(2)}</p>
+      </div>
+      <div className="flex gap-1">
+        <Button
+          onClick={removeItemHandler}
+          color="red"
+          size="sm"
+          leftIcon={<Trash size={16} color="white" />}
+        >
+          Remove
+        </Button>
+        <Button
+          onClick={() => setCount(id, cookedStatus, "decrease")}
+          outlined
+          size="sm"
+          color="primary"
+        >
+          -
+        </Button>
+        <Button
+          onClick={() => setCount(id, cookedStatus, "increase")}
+          size="sm"
+          color="tropical-blue"
+        >
+          +
+        </Button>
+      </div>
     </li>
   );
 };

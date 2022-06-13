@@ -40,10 +40,7 @@ export const Modal: React.FC<ModalProps> = ({
         <div>
           <label>Food is cooked: </label>
           <select onChange={(e) => setCookedStatus(e.target.value)}>
-            <option value="rare">rare</option>
-            <option selected value="medium">
-              medium
-            </option>
+            <option value="medium">medium</option>
             <option value="well-done">well-done</option>
           </select>
         </div>

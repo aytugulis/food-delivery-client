@@ -9,7 +9,13 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <Navbar />
       <main className="grow grid bg-gray-300">{children}</main>
       <footer className="flex justify-center py-2 bg-primary-700 text-white">
-        FOOTER
+        <a
+          href="https://github.com/aytugulis"
+          target="_blank"
+          className="hover:text-secondary-600 duration-500"
+        >
+          © Aytuğ Ulış 2022 - Click visiting my github page
+        </a>
       </footer>
     </div>
   );

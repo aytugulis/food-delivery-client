@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CartCard } from "./CartCard";
 import { useStore } from "../store/zustand";
 
@@ -6,12 +6,16 @@ export const CartList: React.FC = () => {
   const cart = useStore((state) => state.cart);
 
   return (
-    <>
-      <ul className="flex items-center flex-wrap">
-        {cart.map(
-          ({ cookedStatus, description, id, image, name, price, count }) => (
+    <ul className="flex flex-wrap justify-center">
+      {cart
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(
+          (
+            { cookedStatus, description, id, image, name, price, count },
+            index
+          ) => (
             <CartCard
-              key={id}
+              key={index}
               id={id}
               image={image}
               name={name}
@@ -22,7 +26,6 @@ export const CartList: React.FC = () => {
             />
           )
         )}
-      </ul>
-    </>
+    </ul>
   );
 };
