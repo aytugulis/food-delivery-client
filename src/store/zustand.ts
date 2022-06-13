@@ -51,7 +51,7 @@ export const useStore = create<BearState>()(
           if (exists === -1) return { ...state };
 
           const food = state.cart[exists];
-          if (food.count !== 0 && type === "decrease") food.count--;
+          if (food.count > 1 && type === "decrease") food.count--;
           else if (type === "increase") food.count++;
 
           return {

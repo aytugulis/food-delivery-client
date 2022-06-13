@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
-    "immer": "^9.0.14",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
     "react": "^18.0.0",
